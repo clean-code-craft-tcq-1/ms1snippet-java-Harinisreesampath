@@ -24,4 +24,14 @@ public class SensorValidatorTest
         List<Double> currents = Arrays.asList(readings);
         assertFalse(SensorValidator.validateCurrentreadings(currents));
     }
+    @Test
+    public void reportsErrorWhenSOCjumpsWithNullValue()
+    {
+        assertFalse(SensorValidator.validateSOCreadings(null));
+    }
+    @Test
+    public void reportsErrorWhenCurrentjumpsWithNullValue()
+    {
+        assertFalse(SensorValidator.validateCurrentreadings(null));
+    }
 }
